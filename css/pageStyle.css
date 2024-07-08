@@ -1,10 +1,14 @@
-body {
-    font-family: "Lato", sans-serif;
-    background-color: #545555;
+#mainBody {
+    background-color: #505050;
     color: #c8c8c8;
 }
 
-.sidenav {
+#pageHeader {
+    background-color: #323232;
+    margin-left: 200px;
+}
+
+#sideNavigationBar {
     height: 100%;
     width: 200px;
     position: fixed;
@@ -16,7 +20,7 @@ body {
     padding-top: 20px;
 }
 
-.sidenav a {
+#sideNavigationBar a {
     padding: 6px 6px 6px 32px;
     text-decoration: none;
     font-size: 25px;
@@ -24,15 +28,41 @@ body {
     display: block;
 }
 
-.sidenav a:hover {
+#sideNavigationBar a:hover {
     color: white;
 }
 
-.main {
-    margin-left: 200px; /* Same as the width of the sidenav */
+
+
+
+
+#cpuGraph {
+    background-color: #000000;
+    margin-top: 30px;
+    margin-left: 230px;
+    /*width: 100px;*/
+}
+
+#ramGraph {
+    background-color: #32d817;
+    margin-top: 30px;
+    margin-left: 230px;
+    /*width: 100px;*/
+}
+
+#test {
+    margin-left: 230px;
+}
+
+
+
+
+/*.main {
+    margin-left: 200px; /* Same as the width of the sidenav
 }
 
 @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
 }
+*/
