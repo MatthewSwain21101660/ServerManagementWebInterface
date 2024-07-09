@@ -36,26 +36,30 @@
 
 
 
-#cpuGraph {
-    background-color: #000000;
+#cpuGraphContainer {
+    /*background-color: #32d817;
+
+     */
     margin-top: 30px;
     margin-left: 230px;
     /*width: 100px;*/
 }
 
-#ramGraph {
+#ramGraphContainer {
     background-color: #32d817;
     margin-top: 30px;
     margin-left: 230px;
     /*width: 100px;*/
 }
 
-#test {
+#testContainer {
     margin-left: 230px;
 }
 
 
-
+#graphContainer {
+    margin-right: 30px;
+}
 
 /*.main {
     margin-left: 200px; /* Same as the width of the sidenav
@@ -66,3 +70,8 @@
     .sidenav a {font-size: 18px;}
 }
 */
+
+
+
+
+
