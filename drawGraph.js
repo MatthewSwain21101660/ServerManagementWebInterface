@@ -1,21 +1,33 @@
-function drawGraph(containerID) {
-    const containerDimensions = document.getElementById(containerID).getBoundingClientRect();
-    const padding = {left: 40, right: 30, top: 20, bottom: 40};
-    const width = containerDimensions.width - padding.left - padding.right;
-    const height = 500 - padding.top - padding.bottom;
+function drawGraph(containerID, svgID, graphTimescale) {
+    console.log(svgID);
+    console.log(containerID);
+    containerDimensions = document.getElementById(containerID).getBoundingClientRect();
+    margin = {left: 40, right: 30, top: 20, bottom: 40};
+    width = containerDimensions.width - margin.left - margin.right;
+    height = 100 - margin.top - margin.bottom;
 
-    const svg = d3.select("#" + containerID)
+    svg = d3.select("#" + svgID)
         .attr("width", width)
         .attr("height", height);
 
-    const x_scale = d3.scaleBand().range([0, width]).padding(0.1);
-    const y_scale = d3.scaleLinear().range([height, 0]);
-    d3
-        .json(
-            "http://localhost:9000/getUtil"
-        )
-        .then(({data}) => {
+    xScale = d3.scaleLinear().range([margin.left, width - margin.right]);
+    switch (graphTimescale) {
+        case "minute":
+            xScale.domain([0, 60]);
+    }
+    yScale = d3.scaleLinear().range([height - margin.bottom, margin.top]).domain([0, 100]);
+
+
+    xAxis = d3.axisBottom(xScale);
+    yAxis = d3.axisLeft(yScale);
+
+    svg.append("g").call(xAxis);//.call(yAxis);
+    svg.append("g").attr("transform", `translate(${margin.left},0)`).call(yAxis)
+
+
+    d3.json("http://localhost:9000/getUtil").then(({data}) => {
             data.forEach((d) => (d.cpu = +d.cpu));
+            console.log("d");
 
             // Scale the range of the data in the domains
             x_scale.domain(data.map((d) => d.Name));

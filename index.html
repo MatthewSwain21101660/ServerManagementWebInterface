@@ -40,9 +40,10 @@
         </div>
 
         <script>
+            graphTimescale="minute";
             document.addEventListener("DOMContentLoaded", function() {
-                drawGraph("cpuGraph");
-                drawGraph("ramGraph")
+                drawGraph("cpuGraphContainer", "cpuGraph", graphTimescale);
+                drawGraph("ramGraphContainer", "ramGraph", graphTimescale);
             });
         </script>
 
