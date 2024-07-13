@@ -42,8 +42,8 @@
         <script>
             graphTimescale="minute";
             document.addEventListener("DOMContentLoaded", function() {
-                drawGraph("cpuGraphContainer", "cpuGraph", graphTimescale);
-                drawGraph("ramGraphContainer", "ramGraph", graphTimescale);
+                setInterval(drawGraph("cpu", graphTimescale, "cpuGraphContainer", "cpuGraph"), 1000);
+                drawGraph("ram", graphTimescale, "ramGraphContainer", "ramGraph");
             });
         </script>
 
