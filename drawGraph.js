@@ -1,5 +1,4 @@
 function drawGraph(graphType, graphTimescale, containerID, svgID) {
-
     containerDimensions = document.getElementById(containerID).getBoundingClientRect();
     margin = {left: 40, right: 30, top: 20, bottom: 100};
     width = containerDimensions.width - margin.left - margin.right;
@@ -31,7 +30,6 @@ function drawGraph(graphType, graphTimescale, containerID, svgID) {
 
         x.domain(d3.extent(data, d => d.dateTime));
 
-        y.domain([0, 100]);
 
 
 
@@ -39,14 +37,20 @@ function drawGraph(graphType, graphTimescale, containerID, svgID) {
             case "cpu":
                 y.domain([0, 100]);
 
+                svg.append("g")
+                    .call(d3.axisLeft(y)
+                        .tickFormat(d => { return `${d}%`;}))
+
                 line = d3.line()
                     .x(d => x(d.dateTime))
                     .y(d => y(d.cpu));
-
                 break;
 
             case "ram":
                 y.domain([0, d3.max(data, d => d.ramTotal)]);
+
+                svg.append("g")
+                    .call(d3.axisLeft(y));
 
                 line = d3.line()
                     .x(d => x(d.dateTime))
@@ -59,15 +63,16 @@ function drawGraph(graphType, graphTimescale, containerID, svgID) {
 
 
 
+        switch (graphTimescale) {
+            case "minute":
+                svg.append("g")
+                        .attr("transform", "translate(0," + height + ")")
+                        .call(d3.axisBottom(x)
+                        .ticks(d3.timeSecond.every(10))
+                        .tickFormat(d3.timeFormat("%H:%M:%S")));
+                break;
 
-        svg.append("g")
-            .attr("transform", "translate(0," + height + ")")
-            .call(d3.axisBottom(x)
-            .ticks(d3.timeSecond.every(1))
-            .tickFormat(d3.timeFormat("%S")));
-
-        svg.append("g")
-            .call(d3.axisLeft(y));
+        }
 
 
 
@@ -78,6 +83,26 @@ function drawGraph(graphType, graphTimescale, containerID, svgID) {
             .attr("stroke", "steelblue")
             .attr("stroke-width", 1.5)
             .attr("d", line);
+
+        svg.selectAll("xGrid")
+            .data(x.ticks().slice(1))
+            .join("line")
+            .attr("x1", d => x(d))
+            .attr("x2", d => x(d))
+            .attr("y1", 0)
+            .attr("y2", height)
+            .attr("stroke", "#6b6c6c")
+            .attr("stroke-width", .5);
+
+        svg.selectAll("yGrid")
+            .data(y.ticks().slice(1))
+            .join("line")
+            .attr("x1", 0)
+            .attr("x2", width)
+            .attr("y1", d => y(d))
+            .attr("y2", d => y(d))
+            .attr("stroke", "#6b6c6c")
+            .attr("stroke-width", .5);
 
     });
 }

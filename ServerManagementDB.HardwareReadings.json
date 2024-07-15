@@ -1,0 +1,540 @@
+[{
+  "_id": {
+    "$oid": "668c0be74cc81d5669098629"
+  },
+  "dateTime": "2024/07/08 16:55:19",
+  "cpu": "5.11",
+  "ram": "15.9",
+  "_class": "uk.ac.hope.mcse.segh.servermanagement.model.HardwareReading"
+},
+{
+  "_id": {
+    "$oid": "668c0be84cc81d566909862a"
+  },
+  "dateTime": "2024/07/08 16:55:20",
+  "cpu": "5.63",
+  "ram": "16.0",
+  "_class": "uk.ac.hope.mcse.segh.servermanagement.model.HardwareReading"
+},
+{
+  "_id": {
+    "$oid": "668c0be94cc81d566909862b"
+  },
+  "dateTime": "2024/07/08 16:55:21",
+  "cpu": "2.93",
+  "ram": "16.0",
+  "_class": "uk.ac.hope.mcse.segh.servermanagement.model.HardwareReading"
+},
+{
+  "_id": {
+    "$oid": "668c0bea4cc81d566909862c"
+  },
+  "dateTime": "2024/07/08 16:55:22",
+  "cpu": "2.69",
+  "ram": "16.0",
+  "_class": "uk.ac.hope.mcse.segh.servermanagement.model.HardwareReading"
+},
+{
+  "_id": {
+    "$oid": "668c0beb4cc81d566909862d"
+  },
+  "dateTime": "2024/07/08 16:55:23",
+  "cpu": "2.5",
+  "ram": "16.0",
+  "_class": "uk.ac.hope.mcse.segh.servermanagement.model.HardwareReading"
+},
+{
+  "_id": {
+    "$oid": "668c0bec4cc81d566909862e"
+  },
+  "dateTime": "2024/07/08 16:55:24",
+  "cpu": "4.35",
+  "ram": "16.0",
+  "_class": "uk.ac.hope.mcse.segh.servermanagement.model.HardwareReading"
+},
+{
+  "_id": {
+    "$oid": "668c0bed4cc81d566909862f"
+  },
+  "dateTime": "2024/07/08 16:55:25",
+  "cpu": "4.86",
+  "ram": "16.0",
+  "_class": "uk.ac.hope.mcse.segh.servermanagement.model.HardwareReading"
+},
+{
+  "_id": {
+    "$oid": "668c0bee4cc81d5669098630"
+  },
+  "dateTime": "2024/07/08 16:55:26",
+  "cpu": "6.47",
+  "ram": "16.0",
+  "_class": "uk.ac.hope.mcse.segh.servermanagement.model.HardwareReading"
+},
+{
+  "_id": {
+    "$oid": "668c0bef4cc81d5669098631"
+  },
+  "dateTime": "2024/07/08 16:55:27",
+  "cpu": "4.9",
+  "ram": "15.9",
+  "_class": "uk.ac.hope.mcse.segh.servermanagement.model.HardwareReading"
+},
+{
+  "_id": {
+    "$oid": "668c0bf04cc81d5669098632"
+  },
+  "dateTime": "2024/07/08 16:55:28",
+  "cpu": "3.86",
+  "ram": "15.9",
+  "_class": "uk.ac.hope.mcse.segh.servermanagement.model.HardwareReading"
+},
+{
+  "_id": {
+    "$oid": "668c0bf14cc81d5669098633"
+  },
+  "dateTime": "2024/07/08 16:55:29",
+  "cpu": "4.04",
+  "ram": "15.9",
+  "_class": "uk.ac.hope.mcse.segh.servermanagement.model.HardwareReading"
+},
+{
+  "_id": {
+    "$oid": "668c0bf24cc81d5669098634"
+  },
+  "dateTime": "2024/07/08 16:55:30",
+  "cpu": "1.75",
+  "ram": "15.9",
+  "_class": "uk.ac.hope.mcse.segh.servermanagement.model.HardwareReading"
+},
+{
+  "_id": {
+    "$oid": "668c0bf34cc81d5669098635"
+  },
+  "dateTime": "2024/07/08 16:55:31",
+  "cpu": "1.84",
+  "ram": "15.9",
+  "_class": "uk.ac.hope.mcse.segh.servermanagement.model.HardwareReading"
+},
+{
+  "_id": {
+    "$oid": "668c0bf44cc81d5669098636"
+  },
+  "dateTime": "2024/07/08 16:55:32",
+  "cpu": "1.97",
+  "ram": "16.0",
+  "_class": "uk.ac.hope.mcse.segh.servermanagement.model.HardwareReading"
+},
+{
+  "_id": {
+    "$oid": "668c0bf54cc81d5669098637"
+  },
+  "dateTime": "2024/07/08 16:55:33",
+  "cpu": "1.27",
+  "ram": "16.0",
+  "_class": "uk.ac.hope.mcse.segh.servermanagement.model.HardwareReading"
+},
+{
+  "_id": {
+    "$oid": "668c0bf64cc81d5669098638"
+  },
+  "dateTime": "2024/07/08 16:55:34",
+  "cpu": "4.39",
+  "ram": "16.0",
+  "_class": "uk.ac.hope.mcse.segh.servermanagement.model.HardwareReading"
+},
+{
+  "_id": {
+    "$oid": "668c0bf74cc81d5669098639"
+  },
+  "dateTime": "2024/07/08 16:55:35",
+  "cpu": "8.34",
+  "ram": "16.0",
+  "_class": "uk.ac.hope.mcse.segh.servermanagement.model.HardwareReading"
+},
+{
+  "_id": {
+    "$oid": "668c0bf84cc81d566909863a"
+  },
+  "dateTime": "2024/07/08 16:55:36",
+  "cpu": "5.59",
+  "ram": "16.0",
+  "_class": "uk.ac.hope.mcse.segh.servermanagement.model.HardwareReading"
+},
+{
+  "_id": {
+    "$oid": "668c0bf94cc81d566909863b"
+  },
+  "dateTime": "2024/07/08 16:55:37",
+  "cpu": "3.91",
+  "ram": "16.0",
+  "_class": "uk.ac.hope.mcse.segh.servermanagement.model.HardwareReading"
+},
+{
+  "_id": {
+    "$oid": "668c0bfa4cc81d566909863c"
+  },
+  "dateTime": "2024/07/08 16:55:38",
+  "cpu": "1.84",
+  "ram": "16.0",
+  "_class": "uk.ac.hope.mcse.segh.servermanagement.model.HardwareReading"
+},
+{
+  "_id": {
+    "$oid": "668c0bfb4cc81d566909863d"
+  },
+  "dateTime": "2024/07/08 16:55:39",
+  "cpu": "2.13",
+  "ram": "16.0",
+  "_class": "uk.ac.hope.mcse.segh.servermanagement.model.HardwareReading"
+},
+{
+  "_id": {
+    "$oid": "668c0bfc4cc81d566909863e"
+  },
+  "dateTime": "2024/07/08 16:55:40",
+  "cpu": "3.54",
+  "ram": "16.0",
+  "_class": "uk.ac.hope.mcse.segh.servermanagement.model.HardwareReading"
+},
+{
+  "_id": {
+    "$oid": "668c0bfd4cc81d566909863f"
+  },
+  "dateTime": "2024/07/08 16:55:41",
+  "cpu": "2.69",
+  "ram": "15.9",
+  "_class": "uk.ac.hope.mcse.segh.servermanagement.model.HardwareReading"
+},
+{
+  "_id": {
+    "$oid": "668c0bfe4cc81d5669098640"
+  },
+  "dateTime": "2024/07/08 16:55:42",
+  "cpu": "3.77",
+  "ram": "15.9",
+  "_class": "uk.ac.hope.mcse.segh.servermanagement.model.HardwareReading"
+},
+{
+  "_id": {
+    "$oid": "668c0bff4cc81d5669098641"
+  },
+  "dateTime": "2024/07/08 16:55:43",
+  "cpu": "2.35",
+  "ram": "15.9",
+  "_class": "uk.ac.hope.mcse.segh.servermanagement.model.HardwareReading"
+},
+{
+  "_id": {
+    "$oid": "668c0c004cc81d5669098642"
+  },
+  "dateTime": "2024/07/08 16:55:44",
+  "cpu": "6.35",
+  "ram": "15.9",
+  "_class": "uk.ac.hope.mcse.segh.servermanagement.model.HardwareReading"
+},
+{
+  "_id": {
+    "$oid": "668c0c014cc81d5669098643"
+  },
+  "dateTime": "2024/07/08 16:55:45",
+  "cpu": "8.08",
+  "ram": "15.9",
+  "_class": "uk.ac.hope.mcse.segh.servermanagement.model.HardwareReading"
+},
+{
+  "_id": {
+    "$oid": "668c0c024cc81d5669098644"
+  },
+  "dateTime": "2024/07/08 16:55:46",
+  "cpu": "4.52",
+  "ram": "15.9",
+  "_class": "uk.ac.hope.mcse.segh.servermanagement.model.HardwareReading"
+},
+{
+  "_id": {
+    "$oid": "668c0c034cc81d5669098645"
+  },
+  "dateTime": "2024/07/08 16:55:47",
+  "cpu": "4.42",
+  "ram": "15.9",
+  "_class": "uk.ac.hope.mcse.segh.servermanagement.model.HardwareReading"
+},
+{
+  "_id": {
+    "$oid": "668c0c044cc81d5669098646"
+  },
+  "dateTime": "2024/07/08 16:55:48",
+  "cpu": "3.45",
+  "ram": "15.9",
+  "_class": "uk.ac.hope.mcse.segh.servermanagement.model.HardwareReading"
+},
+{
+  "_id": {
+    "$oid": "668c0c054cc81d5669098647"
+  },
+  "dateTime": "2024/07/08 16:55:49",
+  "cpu": "1.57",
+  "ram": "15.9",
+  "_class": "uk.ac.hope.mcse.segh.servermanagement.model.HardwareReading"
+},
+{
+  "_id": {
+    "$oid": "668c0c064cc81d5669098648"
+  },
+  "dateTime": "2024/07/08 16:55:50",
+  "cpu": "2.15",
+  "ram": "15.9",
+  "_class": "uk.ac.hope.mcse.segh.servermanagement.model.HardwareReading"
+},
+{
+  "_id": {
+    "$oid": "668c0c074cc81d5669098649"
+  },
+  "dateTime": "2024/07/08 16:55:51",
+  "cpu": "2.44",
+  "ram": "15.9",
+  "_class": "uk.ac.hope.mcse.segh.servermanagement.model.HardwareReading"
+},
+{
+  "_id": {
+    "$oid": "668c0c084cc81d566909864a"
+  },
+  "dateTime": "2024/07/08 16:55:52",
+  "cpu": "1.45",
+  "ram": "15.9",
+  "_class": "uk.ac.hope.mcse.segh.servermanagement.model.HardwareReading"
+},
+{
+  "_id": {
+    "$oid": "668c0c094cc81d566909864b"
+  },
+  "dateTime": "2024/07/08 16:55:53",
+  "cpu": "2.02",
+  "ram": "15.9",
+  "_class": "uk.ac.hope.mcse.segh.servermanagement.model.HardwareReading"
+},
+{
+  "_id": {
+    "$oid": "668c0c0a4cc81d566909864c"
+  },
+  "dateTime": "2024/07/08 16:55:54",
+  "cpu": "2.79",
+  "ram": "15.9",
+  "_class": "uk.ac.hope.mcse.segh.servermanagement.model.HardwareReading"
+},
+{
+  "_id": {
+    "$oid": "668c0c0b4cc81d566909864d"
+  },
+  "dateTime": "2024/07/08 16:55:55",
+  "cpu": "2.1",
+  "ram": "15.9",
+  "_class": "uk.ac.hope.mcse.segh.servermanagement.model.HardwareReading"
+},
+{
+  "_id": {
+    "$oid": "668c0c0c4cc81d566909864e"
+  },
+  "dateTime": "2024/07/08 16:55:56",
+  "cpu": "1.35",
+  "ram": "15.9",
+  "_class": "uk.ac.hope.mcse.segh.servermanagement.model.HardwareReading"
+},
+{
+  "_id": {
+    "$oid": "668c0c0d4cc81d566909864f"
+  },
+  "dateTime": "2024/07/08 16:55:57",
+  "cpu": "2.23",
+  "ram": "15.9",
+  "_class": "uk.ac.hope.mcse.segh.servermanagement.model.HardwareReading"
+},
+{
+  "_id": {
+    "$oid": "668c0c0e4cc81d5669098650"
+  },
+  "dateTime": "2024/07/08 16:55:58",
+  "cpu": "1.66",
+  "ram": "15.9",
+  "_class": "uk.ac.hope.mcse.segh.servermanagement.model.HardwareReading"
+},
+{
+  "_id": {
+    "$oid": "668c0c0f4cc81d5669098651"
+  },
+  "dateTime": "2024/07/08 16:55:59",
+  "cpu": "2.93",
+  "ram": "15.9",
+  "_class": "uk.ac.hope.mcse.segh.servermanagement.model.HardwareReading"
+},
+{
+  "_id": {
+    "$oid": "668c0c104cc81d5669098652"
+  },
+  "dateTime": "2024/07/08 16:56:00",
+  "cpu": "4.89",
+  "ram": "15.9",
+  "_class": "uk.ac.hope.mcse.segh.servermanagement.model.HardwareReading"
+},
+{
+  "_id": {
+    "$oid": "668c0c114cc81d5669098653"
+  },
+  "dateTime": "2024/07/08 16:56:01",
+  "cpu": "4.05",
+  "ram": "15.9",
+  "_class": "uk.ac.hope.mcse.segh.servermanagement.model.HardwareReading"
+},
+{
+  "_id": {
+    "$oid": "668c0c124cc81d5669098654"
+  },
+  "dateTime": "2024/07/08 16:56:02",
+  "cpu": "1.77",
+  "ram": "15.9",
+  "_class": "uk.ac.hope.mcse.segh.servermanagement.model.HardwareReading"
+},
+{
+  "_id": {
+    "$oid": "668c0c134cc81d5669098655"
+  },
+  "dateTime": "2024/07/08 16:56:03",
+  "cpu": "4.88",
+  "ram": "15.9",
+  "_class": "uk.ac.hope.mcse.segh.servermanagement.model.HardwareReading"
+},
+{
+  "_id": {
+    "$oid": "668c0c144cc81d5669098656"
+  },
+  "dateTime": "2024/07/08 16:56:04",
+  "cpu": "5.76",
+  "ram": "15.9",
+  "_class": "uk.ac.hope.mcse.segh.servermanagement.model.HardwareReading"
+},
+{
+  "_id": {
+    "$oid": "668c0c154cc81d5669098657"
+  },
+  "dateTime": "2024/07/08 16:56:05",
+  "cpu": "5.94",
+  "ram": "15.9",
+  "_class": "uk.ac.hope.mcse.segh.servermanagement.model.HardwareReading"
+},
+{
+  "_id": {
+    "$oid": "668c0c164cc81d5669098658"
+  },
+  "dateTime": "2024/07/08 16:56:06",
+  "cpu": "2.31",
+  "ram": "15.9",
+  "_class": "uk.ac.hope.mcse.segh.servermanagement.model.HardwareReading"
+},
+{
+  "_id": {
+    "$oid": "668c0c174cc81d5669098659"
+  },
+  "dateTime": "2024/07/08 16:56:07",
+  "cpu": "2.01",
+  "ram": "15.9",
+  "_class": "uk.ac.hope.mcse.segh.servermanagement.model.HardwareReading"
+},
+{
+  "_id": {
+    "$oid": "668c0c184cc81d566909865a"
+  },
+  "dateTime": "2024/07/08 16:56:08",
+  "cpu": "6.91",
+  "ram": "15.9",
+  "_class": "uk.ac.hope.mcse.segh.servermanagement.model.HardwareReading"
+},
+{
+  "_id": {
+    "$oid": "668c0c194cc81d566909865b"
+  },
+  "dateTime": "2024/07/08 16:56:09",
+  "cpu": "3.1",
+  "ram": "15.9",
+  "_class": "uk.ac.hope.mcse.segh.servermanagement.model.HardwareReading"
+},
+{
+  "_id": {
+    "$oid": "668c0c1a4cc81d566909865c"
+  },
+  "dateTime": "2024/07/08 16:56:10",
+  "cpu": "6.33",
+  "ram": "15.8",
+  "_class": "uk.ac.hope.mcse.segh.servermanagement.model.HardwareReading"
+},
+{
+  "_id": {
+    "$oid": "668c0c1b4cc81d566909865d"
+  },
+  "dateTime": "2024/07/08 16:56:11",
+  "cpu": "2.63",
+  "ram": "15.9",
+  "_class": "uk.ac.hope.mcse.segh.servermanagement.model.HardwareReading"
+},
+{
+  "_id": {
+    "$oid": "668c0c1c4cc81d566909865e"
+  },
+  "dateTime": "2024/07/08 16:56:12",
+  "cpu": "4.61",
+  "ram": "15.8",
+  "_class": "uk.ac.hope.mcse.segh.servermanagement.model.HardwareReading"
+},
+{
+  "_id": {
+    "$oid": "668c0c1d4cc81d566909865f"
+  },
+  "dateTime": "2024/07/08 16:56:13",
+  "cpu": "3.27",
+  "ram": "15.8",
+  "_class": "uk.ac.hope.mcse.segh.servermanagement.model.HardwareReading"
+},
+{
+  "_id": {
+    "$oid": "668c0c1e4cc81d5669098660"
+  },
+  "dateTime": "2024/07/08 16:56:14",
+  "cpu": "3.91",
+  "ram": "15.8",
+  "_class": "uk.ac.hope.mcse.segh.servermanagement.model.HardwareReading"
+},
+{
+  "_id": {
+    "$oid": "668c0c1f4cc81d5669098661"
+  },
+  "dateTime": "2024/07/08 16:56:15",
+  "cpu": "6.23",
+  "ram": "15.8",
+  "_class": "uk.ac.hope.mcse.segh.servermanagement.model.HardwareReading"
+},
+{
+  "_id": {
+    "$oid": "668c0c204cc81d5669098662"
+  },
+  "dateTime": "2024/07/08 16:56:16",
+  "cpu": "8.36",
+  "ram": "15.8",
+  "_class": "uk.ac.hope.mcse.segh.servermanagement.model.HardwareReading"
+},
+{
+  "_id": {
+    "$oid": "668c0c214cc81d5669098663"
+  },
+  "dateTime": "2024/07/08 16:56:17",
+  "cpu": "6.45",
+  "ram": "15.8",
+  "_class": "uk.ac.hope.mcse.segh.servermanagement.model.HardwareReading"
+},
+{
+  "_id": {
+    "$oid": "668c0c224cc81d5669098664"
+  },
+  "dateTime": "2024/07/08 16:56:18",
+  "cpu": "3.32",
+  "ram": "15.8",
+  "_class": "uk.ac.hope.mcse.segh.servermanagement.model.HardwareReading"
+}]
