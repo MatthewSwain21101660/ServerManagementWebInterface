@@ -42,7 +42,8 @@
 
     margin-top: 30px;
     margin-left: 230px;
-    height: 43vh;
+    margin-bottom: 50px;
+    height: 60vh;
     /*width: 100px;*/
 }
 
@@ -52,8 +53,33 @@
 
     margin-top: 30px;
     margin-left: 230px;
-    height: 43vh;
+    height: 60vh;
 
+
+}
+
+#cpuGraphTimescale {
+    /*margin-top: 10px;
+
+     */
+    margin-bottom: 10px;
+    width: 200px;
+    /*margin-left: 230px;
+
+
+     */
+}
+
+#ramGraphTimescale {
+    /*margin-top: 0px;
+
+     */
+    margin-bottom: 10px;
+    width: 200px;
+    /*margin-left: 230px;
+
+
+     */
 }
 
 /*

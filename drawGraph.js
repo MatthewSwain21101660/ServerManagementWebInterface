@@ -1,8 +1,9 @@
 function drawGraph(graphType, graphTimescale, containerID, svgID) {
+
     //Get the dimensions of the container that the graph will be created in
     containerDimensions = document.getElementById(containerID).getBoundingClientRect();
     //Specifying how far away the graph will be from the sides of the container
-    margin = {left: 40, right: 30, top: 20, bottom: 100};
+    margin = {left: 40, right: 30, top: 20, bottom: 140};
     //Creating variables that can be used to specify dimensions during creation
     width = containerDimensions.width - margin.left - margin.right;
     height = containerDimensions.height - margin.top - margin.bottom;
@@ -16,6 +17,7 @@ function drawGraph(graphType, graphTimescale, containerID, svgID) {
         .append("g")
         //Adding margins to the svg for style and so graph labels can be added
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
 
 
 
@@ -35,12 +37,67 @@ function drawGraph(graphType, graphTimescale, containerID, svgID) {
 
         //Defining the range of the x and y scales, i.e. how big the charts should appear on the page. The width and height variables are used to prevent the chart becoming bigger than its container
         const xScale = d3.scaleTime().range([0, width]);
-        const yScale = d3.scaleLinear().range([height, 0]);
+
+        //const xScale = d3.scaleLinear().range([0, width]);
 
         //Setting the x scale's domain. This determines what data is plotted against in the x-axis, which in this case is the time and date the measurement was taken. Both the CPU and RAM graph will have the same timescale so the x scale can be shared across both graphs.
         xScale.domain(d3.extent(data, d => d.dateTime));
 
-        //Graph specific settings
+        //xScale.domain([0, 60]);
+
+
+
+
+
+
+        switch (graphTimescale) {
+            case "minute":
+                svg.append("g")
+                    //Forces the x-axis to appear at the bottom of the svg
+                    .attr("transform", "translate(0," + height + ")")
+                    //Creates the x-axis with the previously creates values
+                    .call(d3.axisBottom(xScale)
+                    //Changes the labels of the x-axis to only show for every 10 seconds and in the below format
+                    .ticks(d3.timeSecond.every(10))
+                    .tickFormat(d3.timeFormat("%H:%M:%S")));
+                        //.tickValues([0, 10])
+                break;
+
+            case "hour":
+                svg.append("g")
+                    .attr("transform", "translate(0," + height + ")")
+                    .call(d3.axisBottom(xScale)
+                        .ticks(d3.timeMinute.every(10))
+                        .tickFormat(d3.timeFormat("%H:%M:%S")));
+                break;
+
+            case "day":
+                break;
+
+            case "week":
+                break;
+
+            case "month":
+                break;
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+        const yScale = d3.scaleLinear().range([height, 0]);
+
+
+
+
+        //Setting up the y-axis which is different depending on the graph
         if (graphType == "cpu") {
             //As the CPU utilisation will always be out of 100%, the highest value in the y-axis should be 100
             yScale.domain([0, 100]);
@@ -72,37 +129,8 @@ function drawGraph(graphType, graphTimescale, containerID, svgID) {
         }
 
 
-        //
-        switch (graphTimescale) {
-            case "minute":
-                svg.append("g")
-                    //Forces the x-axis to appear at the bottom of the svg
-                    .attr("transform", "translate(0," + height + ")")
-                    //Creates the x-axis with the previously creates values
-                    .call(d3.axisBottom(xScale)
-                        //Changes the labels of the x-axis to only show for every 10 seconds and in the below format
-                        .ticks(d3.timeSecond.every(10))
-                        .tickFormat(d3.timeFormat("%H:%M:%S")));
-                break;
 
-            case "hour":
-                svg.append("g")
-                    .attr("transform", "translate(0," + height + ")")
-                    .call(d3.axisBottom(xScale)
-                        .ticks(d3.timeMinute.every(10))
-                        .tickFormat(d3.timeFormat("%H:%M:%S")));
-                break;
 
-            case "day":
-                break;
-
-            case "week":
-                break;
-
-            case "month":
-                break;
-
-        }
 
 
 
