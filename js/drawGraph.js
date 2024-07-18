@@ -1,4 +1,8 @@
-function drawGraph(graphType, graphTimescale, containerID, svgID) {
+function drawGraph(graphType, containerID) {
+
+    d3.selectAll("#" + graphType + "Graph").remove();
+
+    graphTimescale = document.getElementById(graphType + "GraphTimescale").value;
 
     //Get the dimensions of the container that the graph will be created in
     containerDimensions = document.getElementById(containerID).getBoundingClientRect();
@@ -9,7 +13,9 @@ function drawGraph(graphType, graphTimescale, containerID, svgID) {
     height = containerDimensions.height - margin.top - margin.bottom;
 
     //Create SVG
-    const svg = d3.select("#" + svgID)
+    const svg = d3.select("#" + containerID)
+        .append("svg")
+        .attr("id", graphType + "Graph")
         //Creating the svg to be the same size as the container it is held in
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
@@ -21,6 +27,9 @@ function drawGraph(graphType, graphTimescale, containerID, svgID) {
 
 
 
+//svg.selectAll(".").remove();
+
+    //d3.select("#cpuGraph").remove();
     //Retrieve data from the restful ServerManagement API. The graphTimescale variable allows the user to vary over what period they want to see the data
     d3.json("http://localhost:9000/getUtil?timePeriod=" + graphTimescale).then(function(data) {
 
@@ -47,7 +56,7 @@ function drawGraph(graphType, graphTimescale, containerID, svgID) {
 
 
 
-
+        const now = new Date();
 
 
         switch (graphTimescale) {
@@ -57,10 +66,15 @@ function drawGraph(graphType, graphTimescale, containerID, svgID) {
                     .attr("transform", "translate(0," + height + ")")
                     //Creates the x-axis with the previously creates values
                     .call(d3.axisBottom(xScale)
-                    //Changes the labels of the x-axis to only show for every 10 seconds and in the below format
-                    .ticks(d3.timeSecond.every(10))
-                    .tickFormat(d3.timeFormat("%H:%M:%S")));
-                        //.tickValues([0, 10])
+                        .tickValues([
+                            new Date(now.getTime() - 60000),
+                            new Date(now.getTime() - 45000),
+                            new Date(now.getTime() - 30000),
+                            new Date(now.getTime() - 15000)
+                        ])
+                        .tickFormat((d, i) => ["60 seconds ago", "45 seconds ago", "30 seconds ago", "15 seconds ago", "Now"][i]));
+
+                svg.selectAll(".tick line").style("stroke-opacity", 0);
                 break;
 
             case "hour":
@@ -69,6 +83,8 @@ function drawGraph(graphType, graphTimescale, containerID, svgID) {
                     .call(d3.axisBottom(xScale)
                         .ticks(d3.timeMinute.every(10))
                         .tickFormat(d3.timeFormat("%H:%M:%S")));
+                //.select(".tick line"));
+                d3.select("text").remove()
                 break;
 
             case "day":
@@ -116,7 +132,7 @@ function drawGraph(graphType, graphTimescale, containerID, svgID) {
                 .x(d => xScale(d.dateTime))
                 .y(d => yScale(d.cpu))
 
-        //Broadly does the same as above except with RAM specific settings
+            //Broadly does the same as above except with RAM specific settings
         }else if (graphType == "ram") {
             yScale.domain([0, d3.max(data, d => d.ramTotal)]);
 
@@ -132,16 +148,7 @@ function drawGraph(graphType, graphTimescale, containerID, svgID) {
 
 
 
-
-
-        //Creates a line between the plotted points
-        svg.append("path")
-            .datum(data)
-            .attr("fill", "none")
-            .attr("stroke", "steelblue")
-            .attr("stroke-width", 1.5)
-            .attr("d", line);
-
+/*
         //Creates a faint grid behind the plotted points
         svg.selectAll("xGrid")
             .data(xScale.ticks().slice(1))
@@ -153,15 +160,9 @@ function drawGraph(graphType, graphTimescale, containerID, svgID) {
             .attr("stroke", "#6b6c6c")
             .attr("stroke-width", .5);
 
-        svg.selectAll("yGrid")
-            .data(yScale.ticks().slice(1))
-            .join("line")
-            .attr("x1", 0)
-            .attr("x2", width)
-            .attr("y1", d => yScale(d))
-            .attr("y2", d => yScale(d))
-            .attr("stroke", "#6b6c6c")
-            .attr("stroke-width", .5);
+ */
+
+
 
     });
 }

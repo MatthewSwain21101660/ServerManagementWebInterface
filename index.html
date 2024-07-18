@@ -9,11 +9,11 @@
         <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
 
         <link rel="stylesheet" href="css/pageStyle.css">
-        <script src="drawGraph.js"></script>
-        <script src="updateGraph.js"></script>
+        <script src="js/drawGraph.js"></script>
+        <script src="js/updateGraph.js"></script>
     </head>
 
-    <body id="mainBody">
+    <body id="mainBody" onresize='drawGraph("cpu", "cpuGraphContainer"), updateGraph("cpu", "cpuGraphContainer", "cpuGraph"), drawGraph("ram", "ramGraphContainer"), updateGraph("ram", "ramGraphContainer", "ramGraph")'>
         <div id="sideNavigationBar" class="sidenav">
             <a href="index.html">Home</a>
             <a href="cpu.html">CPU Usage</a>
@@ -28,7 +28,7 @@
             <div class="row">
                 <div class="col-lg-5">
                     <div id="cpuGraphContainer" class="container">
-                        <select class="form-select" id="cpuGraphTimescale">
+                        <select class="form-select" id="cpuGraphTimescale" onchange='drawGraph("cpu", "cpuGraphContainer"), updateGraph("cpu", "cpuGraphContainer", "cpuGraph")'>
                             <option value="minute">Minute</option>
                             <option value="hour">Hour</option>
                             <option value="day">Day</option>
@@ -36,13 +36,11 @@
                             <option value="month">Month</option>
                         </select>
                         <h2>CPU Utilisation Graph</h2>
-                        <svg id="cpuGraph"></svg>
-
                     </div>
                     <div class="container"></div>
                 </div>
                 <div class="col-lg-5">
-                    <div id="ramGraphContainer" class="container">
+                    <div id="ramGraphContainer" class="container" onchange='drawGraph("ram", "ramGraphContainer"), updateGraph("ram", "ramGraphContainer", "ramGraph")'>
                         <select class="form-select" id="ramGraphTimescale">
                             <option value="minute">Minute</option>
                             <option value="hour">Hour</option>
@@ -51,7 +49,6 @@
                             <option value="month">Month</option>
                         </select>
                         <h2>RAM Utilisation Graph</h2>
-                        <svg id="ramGraph"></svg>
                     </div>
                 </div>
             </div>
@@ -59,23 +56,50 @@
 
 
         <script>
-            graphTimescale="day";
             document.addEventListener("DOMContentLoaded", function() {
-                cpuGraphTimescale = document.getElementById("cpuGraphTimescale").value;
-                drawGraph("cpu", cpuGraphTimescale, "cpuGraphContainer", "cpuGraph");
-                ramGraphTimescale = document.getElementById("ramGraphTimescale").value;
-                drawGraph("ram", ramGraphTimescale, "ramGraphContainer", "ramGraph");
+                drawGraph("cpu", "cpuGraphContainer");
+                updateGraph("cpu", "cpuGraphContainer", "cpuGraph");
+
+                drawGraph("ram", "ramGraphContainer");
+                updateGraph("ram", "ramGraphContainer", "ramGraph");
+
+                setInterval(function (){
+                    updateGraph("cpu", "cpuGraphContainer", "cpuGraph");
+                    updateGraph("ram", "ramGraphContainer", "ramGraph");
+                }, 1000);
 
 /*
-                setInterval(function(){
-                    updateGraph("cpu", cpuGraphTimescale, "cpuGraphContainer", "cpuGraph");
-                }, 1000);
-                setInterval(function(){
-                    updateGraph("ram", ramGraphTimescale, "ramGraphContainer", "ramGraph");
-                }, 1000);
+                switch (cpuGraphTimescale){
+                    case "minute":
+                        setInterval(function (){
+                            cpuGraphTimescale = document.getElementById("cpuGraphTimescale").value;
+                            updateGraph("cpu", cpuGraphTimescale, "cpuGraphContainer", "cpuGraph");
+                            ramGraphTimescale = document.getElementById("ramGraphTimescale").value;
+                            updateGraph("ram", ramGraphTimescale, "ramGraphContainer", "ramGraph");
+
+                        }, 1000);
+
+                    case "hour":
+                        setInterval(function (){
+                            cpuGraphTimescale = document.getElementById("cpuGraphTimescale").value;
+                            updateGraph("cpu", cpuGraphTimescale, "cpuGraphContainer", "cpuGraph");
+                            ramGraphTimescale = document.getElementById("ramGraphTimescale").value;
+                            updateGraph("ram", ramGraphTimescale, "ramGraphContainer", "ramGraph");
+
+                        }, 60000);
+                }
+
 
  */
+
             });
+
+
+            //document.getElementById("cpuGraph").addEventListener("change", drawGraph)
+
+            //document.addEventListener("resize", drawGraph("cpu", cpuGraphTimescale, "cpuGraphContainer"));
+
+
         </script>
 
     </body>

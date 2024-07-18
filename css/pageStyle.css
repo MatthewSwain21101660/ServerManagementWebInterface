@@ -33,9 +33,6 @@
 }
 
 
-
-
-
 #cpuGraphContainer {
     background-color: #545555;
 
@@ -71,7 +68,7 @@
 }
 
 #ramGraphTimescale {
-    /*margin-top: 0px;
+    /*margin-top: 10px;
 
      */
     margin-bottom: 10px;
@@ -82,26 +79,20 @@
      */
 }
 
-/*
-#cpuGraph{
-    background-color: #545555;
+rect {
+    pointer-events: all;
+    fill-opacity: 0;
+    stroke-opacity: 0;
+    z-index: 1;
 }
 
- */
-
-
-
-/*.main {
-    margin-left: 200px; /* Same as the width of the sidenav
+.tooltip {
+    position: absolute;
+    padding: 10px;
+    background-color: steelblue;
+    color: white;
+    border: 1px solid white;
+    border-radius: 10px;
+    display: none;
+    opacity: 0.75;
 }
-
-@media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
-}
-*/
-
-
-
-
-
