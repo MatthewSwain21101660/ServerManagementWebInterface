@@ -3,6 +3,7 @@ function drawGraph(graphType, containerID) {
     d3.selectAll("#" + graphType + "Graph").remove();
 
     graphTimescale = document.getElementById(graphType + "GraphTimescale").value;
+    console.log(graphTimescale);
 
     //Get the dimensions of the container that the graph will be created in
     containerDimensions = document.getElementById(containerID).getBoundingClientRect();
@@ -59,6 +60,7 @@ function drawGraph(graphType, containerID) {
         const now = new Date();
 
 
+
         switch (graphTimescale) {
             case "minute":
                 svg.append("g")
@@ -80,20 +82,41 @@ function drawGraph(graphType, containerID) {
             case "hour":
                 svg.append("g")
                     .attr("transform", "translate(0," + height + ")")
-                    .call(d3.axisBottom(xScale)
-                        .ticks(d3.timeMinute.every(10))
-                        .tickFormat(d3.timeFormat("%H:%M:%S")));
-                //.select(".tick line"));
-                d3.select("text").remove()
+                    .call(d3.axisBottom(xScale));
+                        //.ticks(d3.timeMinute.every(10))
+                        //.tickFormat(d3.timeFormat("%H:%M:%S")));
+                svg.selectAll(".tick line").style("stroke-opacity", 0);
+                svg.selectAll("text").remove();
                 break;
 
             case "day":
+                svg.append("g")
+                    .attr("transform", "translate(0," + height + ")")
+                    .call(d3.axisBottom(xScale)
+                        .ticks(d3.timeMinute.every(720))
+                        .tickFormat(d3.timeFormat("%H:%M:%S")));
+                svg.selectAll(".tick line").style("stroke-opacity", 0);
+                svg.selectAll("text").remove();
                 break;
 
             case "week":
+                svg.append("g")
+                    .attr("transform", "translate(0," + height + ")")
+                    .call(d3.axisBottom(xScale)
+                        .ticks(d3.timeMinute.every(720))
+                        .tickFormat(d3.timeFormat("%H:%M:%S")));
+                svg.selectAll(".tick line").style("stroke-opacity", 0);
+                svg.selectAll("text").remove();
                 break;
 
             case "month":
+                svg.append("g")
+                    .attr("transform", "translate(0," + height + ")")
+                    .call(d3.axisBottom(xScale)
+                        .ticks(d3.timeMinute.every(10))
+                        .tickFormat(d3.timeFormat("%H:%M:%S")));
+                svg.selectAll(".tick line").style("stroke-opacity", 0);
+                svg.selectAll("text").remove();
                 break;
 
         }

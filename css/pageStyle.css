@@ -35,49 +35,64 @@
 
 #cpuGraphContainer {
     background-color: #545555;
-
-
     margin-top: 30px;
     margin-left: 230px;
     margin-bottom: 50px;
     height: 60vh;
-    /*width: 100px;*/
+    padding-top: 20px;
 }
 
 #ramGraphContainer {
     background-color: #545555;
-
-
     margin-top: 30px;
     margin-left: 230px;
     height: 60vh;
-
-
+    padding-top: 20px;
 }
 
-#cpuGraphTimescale {
-    /*margin-top: 10px;
 
-     */
+#cpuGraphTimescale {
     margin-bottom: 10px;
     width: 200px;
-    /*margin-left: 230px;
-
-
-     */
 }
 
 #ramGraphTimescale {
-    /*margin-top: 10px;
-
-     */
     margin-bottom: 10px;
     width: 200px;
-    /*margin-left: 230px;
-
-
-     */
 }
+
+
+
+
+
+
+#cpuAreaChartContainer {
+    background-color: #545555;
+    margin-top: 30px;
+    margin-left: 230px;
+    height: 50vh;
+    margin-right: 30px;
+}
+
+#ramAreaChartContainer {
+    background-color: #545555;
+    margin-top: 30px;
+    margin-left: 230px;
+    height: 50vh;
+    margin-right: 30px;
+}
+
+#sliderRange {
+    background-color: #545555;
+    margin-left: 230px;
+    height: 10vh;
+    margin-right: 30px;
+}
+
+
+
+
+
 
 rect {
     pointer-events: all;

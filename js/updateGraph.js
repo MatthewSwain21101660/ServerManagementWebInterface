@@ -41,10 +41,31 @@ function updateGraph(graphType, containerID, svgID) {
 
         //Defining the range of the x and y scales, i.e. how big the charts should appear on the page. The width and height variables are used to prevent the chart becoming bigger than its container
         const xScale = d3.scaleTime().range([0, width]);
-
+        //const xScale = d3.scaleTime().range([9, width + 19]);
         //const xScale = d3.scaleLinear().range([0, width]);
 
         //Setting the x scale's domain. This determines what data is plotted against in the x-axis, which in this case is the time and date the measurement was taken. Both the CPU and RAM graph will have the same timescale so the x scale can be shared across both graphs.
+
+        const now = new Date();
+
+        /*
+        let timeOffset;
+        if (graphTimescale == "minute") {
+            timeOffset = new Date(now.getTime() - 60000);
+        }else if (graphTimescale == "hour") {
+            timeOffset = new Date(now.getTime() - 3600000);
+        }else if (graphTimescale == "day") {
+            timeOffset = new Date(now.getTime() - 86400000);
+        }else if (graphTimescale == "week") {
+            timeOffset = new Date(now.getTime() - 604800000);
+        }else if (graphTimescale == "month") {
+            timeOffset = new Date(now.getTime() - 2592000000);
+        }
+
+
+        xScale.domain([timeOffset, now]);
+
+         */
         xScale.domain(d3.extent(data, d => d.dateTime));
 
         //xScale.domain([0, 60]);
