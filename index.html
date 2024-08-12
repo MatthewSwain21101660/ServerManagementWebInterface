@@ -9,11 +9,12 @@
         <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
 
         <link rel="stylesheet" href="css/pageStyle.css">
-        <script src="js/drawGraph.js"></script>
-        <script src="js/updateGraph.js"></script>
+        <script src="js/lineGraph/drawLineGraph.js"></script>
+        <script src="js/lineGraph/updateLineGraph.js"></script>
+        <script src="js/lineGraph/changeLineGraphTimescale.js"></script>
     </head>
 
-    <body id="mainBody" onresize='drawGraph("cpu", "cpuGraphContainer"), updateGraph("cpu", "cpuGraphContainer", "cpuGraph"), drawGraph("ram", "ramGraphContainer"), updateGraph("ram", "ramGraphContainer", "ramGraph")'>
+    <body id="mainBody" onresize='changeGraphTimescale("cpu", "cpuGraphContainer", "cpuGraph"), changeGraphTimescale("ram", "ramGraphContainer", "ramGraph")'>
         <div id="sideNavigationBar" class="sidenav">
             <a href="index.html">Home</a>
             <a href="cpu.html">CPU Usage</a>
@@ -28,8 +29,8 @@
             <div class="row">
                 <div class="col-lg-5">
                     <div id="cpuGraphContainer" class="container">
-                        <select class="form-select" id="cpuGraphTimescale" onchange='drawGraph("cpu", "cpuGraphContainer"), updateGraph("cpu", "cpuGraphContainer", "cpuGraph")'>
-                            <option value="minute">Minute</option>
+                        <select class="form-select" id="cpuGraphTimescale">
+                            <option value="minute" selected>Minute</option>
                             <option value="hour">Hour</option>
                             <option value="day">Day</option>
                             <option value="week">Week</option>
@@ -40,9 +41,9 @@
                     <div class="container"></div>
                 </div>
                 <div class="col-lg-5">
-                    <div id="ramGraphContainer" class="container" onchange='drawGraph("ram", "ramGraphContainer"), updateGraph("ram", "ramGraphContainer", "ramGraph")'>
+                    <div id="ramGraphContainer" class="container">
                         <select class="form-select" id="ramGraphTimescale">
-                            <option value="minute">Minute</option>
+                            <option value="minute" selected>Minute</option>
                             <option value="hour">Hour</option>
                             <option value="day">Day</option>
                             <option value="week">Week</option>
@@ -57,51 +58,10 @@
 
         <script>
             document.addEventListener("DOMContentLoaded", function() {
-                drawGraph("cpu", "cpuGraphContainer");
-                updateGraph("cpu", "cpuGraphContainer", "cpuGraph");
-
-                drawGraph("ram", "ramGraphContainer");
-                updateGraph("ram", "ramGraphContainer", "ramGraph");
-
-                setInterval(function (){
-                    updateGraph("cpu", "cpuGraphContainer", "cpuGraph");
-                    updateGraph("ram", "ramGraphContainer", "ramGraph");
-                }, 1000);
-
-/*
-                switch (cpuGraphTimescale){
-                    case "minute":
-                        setInterval(function (){
-                            cpuGraphTimescale = document.getElementById("cpuGraphTimescale").value;
-                            updateGraph("cpu", cpuGraphTimescale, "cpuGraphContainer", "cpuGraph");
-                            ramGraphTimescale = document.getElementById("ramGraphTimescale").value;
-                            updateGraph("ram", ramGraphTimescale, "ramGraphContainer", "ramGraph");
-
-                        }, 1000);
-
-                    case "hour":
-                        setInterval(function (){
-                            cpuGraphTimescale = document.getElementById("cpuGraphTimescale").value;
-                            updateGraph("cpu", cpuGraphTimescale, "cpuGraphContainer", "cpuGraph");
-                            ramGraphTimescale = document.getElementById("ramGraphTimescale").value;
-                            updateGraph("ram", ramGraphTimescale, "ramGraphContainer", "ramGraph");
-
-                        }, 60000);
-                }
-
-
- */
-
+                changeGraphTimescale("cpu", "cpuGraphContainer", "cpuGraph")
+                changeGraphTimescale("ram", "ramGraphContainer", "ramGraph")
             });
-
-
-            //document.getElementById("cpuGraph").addEventListener("change", drawGraph)
-
-            //document.addEventListener("resize", drawGraph("cpu", cpuGraphTimescale, "cpuGraphContainer"));
-
-
         </script>
-
     </body>
 </html>
 

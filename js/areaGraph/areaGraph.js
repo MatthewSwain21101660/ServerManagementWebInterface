@@ -89,6 +89,9 @@ console.log(containerID);
             .attr("stroke-width", 1)
             .attr("d", line);
 
+        //Code to add a rectangle giving specific readouts when hovering over a specific datapoint
+        //Code adapted from https://www.youtube.com/watch?v=uyPYxx-WGxc
+
         const circle = svg.append("circle")
             .attr("r", 0)
             .attr("fill", "steelblue")
@@ -139,7 +142,7 @@ console.log(containerID);
             .max(d3.max(data, d => d.dateTime))
             .width(1670)
             .tickFormat(d3.timeFormat("%Y/%m/%d %H:%M:%S"))
-            .ticks(3)
+            .ticks(10)
             .default([d3.min(data, d => d.dateTime), d3.max(data, d => d.dateTime)])
             .fill("#85bb65");
 
