@@ -65,10 +65,11 @@ function updateLineGraph(graphType, containerID, svgID) {
                 .y(d => yScale(d.ram));
         }
 
-        // Bind data and transition the line path
+        //Binds the new data to the line graph
         let path = svg.selectAll("path#line-" + graphType)
             .data([data]);
 
+        //Enters the path and changes the graph to represent the latest values
         path.enter()
             .append("path")
             .attr("id", "line-" + graphType)
@@ -79,93 +80,5 @@ function updateLineGraph(graphType, containerID, svgID) {
             .transition()
             .duration(750)
             .attr("d", updatedLine);
-
-        // Optionally: Update or add gridlines
-        svg.selectAll("line.yGrid")
-            .data(yScale.ticks().slice(1))
-            .join("line")
-            .attr("class", "yGrid")
-            .attr("x1", 0)
-            .attr("x2", width)
-            .attr("y1", d => yScale(d))
-            .attr("y2", d => yScale(d))
-            .attr("stroke", "#6b6c6c")
-            .attr("stroke-width", .5);
     });
 }
-
-/*
-
-    //Create SVG
-    const svg = d3.select("#" + svgID)
-        //Creating the svg to be the same size as the container it is held in
-        .attr("width", width + margin.left + margin.right)
-        .attr("height", height + margin.top + margin.bottom)
-        //Adding a g tag to the svg for the various graph elements to be grouped in
-        .append("g")
-        //Adding margins to the svg for style and so graph labels can be added
-        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-
-
-
-        //Setting up the y-axis which is different depending on the graph
-        if (graphType == "cpu") {
-            //As the CPU utilisation will always be out of 100%, the highest value in the y-axis should be 100
-            yScale.domain([0, 100]);
-
-/*
-            svg.select("#line")
-                .transition()
-                .duration(300)
-                .call(d3.line().x(d => xScale(d.dateTime)).y(d => yScale(d.cpu)));
-
-
-line = d3.line()
-    .x(d => xScale(d.dateTime))
-    .y(d => yScale(d.cpu));
-
-//Broadly does the same as above except with RAM specific settings
-} else if (graphType == "ram") {
-    yScale.domain([0, d3.max(data, d => d.ramTotal)]);
-
-    /*svg.select("#line")
-        .transition()
-        .duration(300)
-        .call(d3.line().x(d => xScale(d.dateTime)).y(d => yScale(d.cpu)));
-
-
-    line = d3.line()
-        .x(d => xScale(d.dateTime))
-        .y(d => yScale(d.ram));
-
-
-}
-svg.selectAll("path.line").remove();
-
-//Creates a line between the plotted points
-svg.append("path")
-    .datum(data)
-    .attr("id", "graphLine")
-    .attr("fill", "none")
-    .attr("stroke", "steelblue")
-    .attr("stroke-width", 1.5)
-    .attr("d", line);
-
-
-
-
-svg.selectAll("yGrid")
-    .data(yScale.ticks().slice(1))
-    .join("line")
-    .attr("x1", 0)
-    .attr("x2", width)
-    .attr("y1", d => yScale(d))
-    .attr("y2", d => yScale(d))
-    .attr("stroke", "#6b6c6c")
-    .attr("stroke-width", .5);
-
-});
-
- */
-

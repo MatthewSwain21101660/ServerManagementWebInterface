@@ -9,6 +9,7 @@
         <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
         <script src="https://unpkg.com/d3-simple-slider"></script>
 
+
         <link rel="stylesheet" href="css/pageStyle.css">
         <script src="js/areaGraph/areaGraph.js"></script>
     </head>
@@ -27,6 +28,7 @@
         <div id="ramAreaChartContainer" class="d-flex pe-1"></div>
         <div id="sliderRange" class="d-flex pe-1"></div>
         <script>
+            //Draws the area graph when the page has finished loading
             document.addEventListener("DOMContentLoaded", function() {
                 drawAreaGraph("ram", "ramAreaChartContainer");
             });

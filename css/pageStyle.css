@@ -61,11 +61,6 @@
     width: 200px;
 }
 
-
-
-
-
-
 #cpuAreaChartContainer {
     background-color: #545555;
     margin-top: 30px;
@@ -88,11 +83,6 @@
     height: 10vh;
     margin-right: 30px;
 }
-
-
-
-
-
 
 rect {
     pointer-events: all;

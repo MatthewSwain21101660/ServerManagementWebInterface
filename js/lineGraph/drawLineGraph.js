@@ -43,6 +43,7 @@ function drawLineGraph(graphType, containerID, timescale) {
 
         const now = new Date();
 
+        //Attaches the x axis to the bottom of the page and gives time period appropriate ticks
         switch (timescale) {
             case "minute":
                 svg.append("g")
@@ -157,5 +158,16 @@ function drawLineGraph(graphType, containerID, timescale) {
                 .attr("id", "yAxis")
                 .call(d3.axisLeft(yScale));
         }
+        //Adds lines along the y axis ticks so the user can more easily tell what a particular data point corresponds to
+        svg.selectAll("line.yGrid")
+            .data(yScale.ticks().slice(1))
+            .join("line")
+            .attr("class", "yGrid")
+            .attr("x1", 0)
+            .attr("x2", width)
+            .attr("y1", d => yScale(d))
+            .attr("y2", d => yScale(d))
+            .attr("stroke", "#6b6c6c")
+            .attr("stroke-width", .5);
     });
 }

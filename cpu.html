@@ -14,7 +14,7 @@
 
     </head>
 
-    <body id="mainBody">
+    <body id="mainBody" onresize='drawAreaGraph("cpu", "cpuAreaChartContainer")'>
         <div id="sideNavigationBar" class="sidenav">
             <a href="index.html">Home</a>
             <a href="cpu.html">CPU Usage</a>
@@ -28,6 +28,7 @@
         <div id="cpuAreaChartContainer" class="d-flex pe-1"></div>
         <div id="sliderRange" class="d-flex pe-1"></div>
         <script>
+            //Draws the area graph when the page has finished loading
             document.addEventListener("DOMContentLoaded", function() {
                 drawAreaGraph("cpu", "cpuAreaChartContainer");
             });
