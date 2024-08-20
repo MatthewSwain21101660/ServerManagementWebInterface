@@ -122,10 +122,10 @@ function drawLineGraph(graphType, containerID, timescale) {
                     .attr("transform", "translate(0," + height + ")")
                     .call(d3.axisBottom(xScale)
                         .tickValues([
-                            new Date(now.getTime() - 2678400000),
-                            new Date(now.getTime() - 2008800000),
-                            new Date(now.getTime() - 1339200000),
-                            new Date(now.getTime() - 669600000),
+                            new Date(now.getTime() - 2419200000),
+                            new Date(now.getTime() - 1814400000),
+                            new Date(now.getTime() - 1209600000),
+                            new Date(now.getTime() - 604800000),
                             new Date(now.getTime())
                         ])
                         .tickFormat((d, i) => ["4 weeks ago", "3 weeks ago", "2 weeks ago", "1 week ago", "Now"][i]));
